@@ -1,10 +1,31 @@
+<!-- popup.html -->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Export Tabs</title>
-  <script src="popup.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab to Markdown</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <button id="exportButton">Export Tabs</button>
+  <button id="exportButton">Copy Tabs as Markdown</button>
+  <div id="txtreturn"> </div>
+  <script src="popup.js"></script>
 </body>
 </html>

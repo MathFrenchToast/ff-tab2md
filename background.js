@@ -4,7 +4,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     browser.tabs.query({ currentWindow: true })
       .then((tabs) => {
         const formattedTabs = tabs.map(tab => `- ${tab.title}`).join('\n');
-        return navigator.clipboard.writeText(formattedTabs);
+        navigator.clipboard.writeText(formattedTabs);
       })
       .then(() => {
         sendResponse({ action: 'tabsCopied' });
