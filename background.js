@@ -3,7 +3,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'exportTabs') {
     browser.tabs.query({ currentWindow: true })
       .then((tabs) => {
-        const formattedTabs = tabs.map(tab => `- ${tab.title}`).join('\n');
+        const formattedTabs = tabs.map(tab => `- [${tab.title}](${tab.url})`).join('\n');
         navigator.clipboard.writeText(formattedTabs);
       })
       .then(() => {
